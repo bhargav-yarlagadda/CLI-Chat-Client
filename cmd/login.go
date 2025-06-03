@@ -36,7 +36,7 @@ func Login(arguments []string) {
 	username := strings.TrimPrefix(usernameToken, "--username:")
 	password := strings.TrimPrefix(passwordToken, "--password:")
 
-	publicKey, token, err := api.Login(username, password)
+	publicKey, token, err := api.LoginUser(username, password)
 	if err != nil {
 		fmt.Println("❌", err)
 		return
