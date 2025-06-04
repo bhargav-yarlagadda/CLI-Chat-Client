@@ -58,8 +58,11 @@ func main() {
 		switch command {
 		case "login":
 			commands.Login(args[1:])
+			
 		case "register":
 			commands.Register(args[1:])
+		case "add":
+			commands.AddFriend(args)
 		default:
 			fmt.Println("Command unknown: ", command)
 		}

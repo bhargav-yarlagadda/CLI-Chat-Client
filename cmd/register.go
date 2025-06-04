@@ -2,6 +2,7 @@ package commands
 
 import (
 	"cli-chat-client/api"
+	"cli-chat-client/data"
 	"fmt"
 	"strings"
 )
@@ -18,7 +19,10 @@ func Register(arguments []string) {
 			return
 		}
 	}
-
+	if(data.USERNAME!="" || data.PUBLIC_KEY !=""){
+		fmt.Println("You are already logged in please close current session to login again.")
+		return
+	}
 	if len(arguments) < 2 {
 		fmt.Println("Not enough arguments. Use --help for usage.")
 		return
