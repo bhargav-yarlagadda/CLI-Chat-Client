@@ -63,6 +63,8 @@ func main() {
 			commands.Register(args[1:])
 		case "add":
 			commands.AddFriend(args)
+		case "clear":
+			clearScreen()
 		default:
 			fmt.Println("Command unknown: ", command)
 		}
