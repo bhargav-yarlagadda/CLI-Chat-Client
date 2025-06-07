@@ -65,6 +65,8 @@ func main() {
 			commands.AddFriend(args)
 		case "clear":
 			clearScreen()
+		case "notify":
+			commands.Notify()
 		default:
 			fmt.Println("Command unknown: ", command)
 		}
