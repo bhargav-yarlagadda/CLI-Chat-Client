@@ -1,9 +1,11 @@
 package commands
 
 import (
+	
 	"cli-chat-client/api"
 	"cli-chat-client/data"
 	"fmt"
+	
 	"strings"
 )
 
@@ -19,7 +21,7 @@ func Login(arguments []string) {
 			return
 		}
 	}
-	if(data.USERNAME!="" || data.PUBLIC_KEY !=""){
+	if data.USERNAME != "" || data.PUBLIC_KEY != "" {
 		fmt.Println("You are already logged in please close current session to login again.")
 		return
 	}
@@ -44,9 +46,10 @@ func Login(arguments []string) {
 		fmt.Println("❌", err)
 		return
 	}
-	data.USERNAME=username
-	data.PUBLIC_KEY = publicKey 
-	data.JWT_TOKEN = token 
+	data.USERNAME = username
+	data.PUBLIC_KEY = publicKey
+	data.JWT_TOKEN = token
 	fmt.Println("🔑 Public Key:", publicKey)
 	fmt.Println("🔐 Token:", token)
+	SetKey(make([]string,0))
 }

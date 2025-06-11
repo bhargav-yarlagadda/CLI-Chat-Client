@@ -67,6 +67,8 @@ func main() {
 			clearScreen()
 		case "notify":
 			commands.Notify()
+		case "set":
+			commands.SetKey(args)
 		default:
 			fmt.Println("Command unknown: ", command)
 		}
